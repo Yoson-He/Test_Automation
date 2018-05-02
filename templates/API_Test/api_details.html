@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% block mainbody %}
+    <div>
+        <div class="api-box-top">
+            <a  class="layui-btn layui-btn-small layui-btn-primary" href="{% url 'api_manage' %}"><i class="layui-icon">&#xe603;</i>返回列表</a>
+            <button class="layui-btn layui-btn-small layui-btn-normal">继续添加</button>
+            <button class="layui-btn layui-btn-small layui-btn-normal">保存</button>
+        </div>
+        <div class="form-div">
+            <form class="layui-form layui-form-pane" action="">
+                <div class="api-basic">
+                    <div class="layui-form-item api-form-item">
+                        <label class="layui-form-label api-form-label">分组</label>
+                        <div class="api-form-inline layui-input-inline" style="width: 150px">
+                            <select id="project_select" name="project_id"  lay-verify="required" ></select>
+                        </div>
+                        <div class="layui-input-inline api-form-inline">
+                            <select id="project_select" name="group_id"  lay-verify="required"></select>
+                        </div>
+                    </div>
+                    <div class="layui-form-item api-form-item">
+                        <label class="layui-form-label api-form-label">状态</label>
+                        <div class="layui-input-inline api-form-inline" style="width: 100px">
+                            <select id="project_select" name="state"  lay-verify="required">
+                                <option value="">禁用</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-form-item api-form-item">
+                        <label class="layui-form-label api-form-label">URI</label>
+                        <div class="layui-input-inline api-form-inline" style="width: 100px">
+                            <select id="project_select" name="protocol"  lay-verify="required">
+                                <option value="0">HTTP</option>
+                                <option value="1">HTTPS</option>
+                            </select>
+                        </div>
+                        <div class="layui-input-inline api-form-inline" style="width: 100px">
+                            <select id="project_select" name="method"  lay-verify="required">
+                                <option value="0">POST</option>
+                                <option value="1">GET</option>
+                            </select>
+                        </div>
+                        <div class="layui-input-inline api-form-inline" style="width: calc(100% - 307px)">
+                            <input type="text" name="uri" required lay-verify="required" placeholder="" autocomplete="off" class="layui-input" >
+                        </div>
+                    </div>
+                    <div class="layui-form-item api-form-item">
+                        <label class="layui-form-label api-form-label">名称</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="uri" required lay-verify="required" placeholder="" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                </div>
+                <div class="api-param">
+                    <div class="api-request-param">
+                        <div class="layui-tab layui-tab-card">
+                            <ul class="layui-tab-title">
+                                <li class="layui-this">请求头</li>
+                                <li>URI参数</li>
+                                <li>Qurey参数</li>
+                                <li>Body参数</li>
+                            </ul>
+                            <div class="layui-tab-content" style="height: 100px;">
+                                <div class="layui-tab-item layui-show">
+                                    <button class="layui-btn layui-btn-small layui-btn-normal">导入头部</button>
+                                    <table style="width: 100%;background-color: #f2f2f2;height: 40px;line-height: 40px"><thead><tr>
+                                        <td>Key</td>
+                                        <td>Value</td>
+                                        <td>Description</td>
+                                    </tr></thead></table>
+                                </div>
+                                <div class="layui-tab-item">2</div>
+                                <div class="layui-tab-item">3</div>
+                                <div class="layui-tab-item">4</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="api-response-param">
+                        <div class="layui-tab layui-tab-card">
+                            <ul class="layui-tab-title">
+                                <li class="layui-this">返回参数</li>
+                            </ul>
+                            <div class="layui-tab-content" style="height: 100px;">
+                                <div class="layui-tab-item layui-show">2</div>
+                            </div>
+                        </div>
+                        <div class="api-response-sample">
+                            <div class="layui-tab layui-tab-card">
+                                <ul class="layui-tab-title">
+                                    <li class="layui-this">成功示例</li>
+                                    <li>失败示例</li>
+                                </ul>
+                                <div class="layui-tab-content" style="height: 100px;">
+                                    <div class="layui-tab-item layui-show">2</div>
+                                    <div class="layui-tab-item">3</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+            </form>
+        </div>
+    </div>
+    <script>
+        layui.use(['form','element','table'],function(){
+            var table = layui.table,form = layui.form,element = layui.element;
+
+        });
+    </script>
+{% endblock %}
