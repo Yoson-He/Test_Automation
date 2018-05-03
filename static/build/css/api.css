@@ -49,3 +49,17 @@
     margin-right: 0!important;
     height: 30px;
 }
+
+.api-headers-table,.api-uri-table,.api-query-table{
+    width: 100%;
+    border: 1px solid #e5e5e5;
+}
+
+.api-headers-table,.api-uri-table,.api-query-table>thead{
+    background-color: #e5e5e5;
+    height: 40px;
+    line-height: 40px;
+}
+.api-headers-table,.api-uri-table,.api-query-table>thead td{
+    padding-left: 10px;
+}
